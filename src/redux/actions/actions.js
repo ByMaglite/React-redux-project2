@@ -1,22 +1,27 @@
-import { SELL_LAPTOP, SELL_COMP, SELL_WATCH, SELL_PHONE } from "../types/Types";
+import {SELL_COMP, SELL_PHONE, SELL_LAPTOP, SELL_WATCH} from "../types/type";
 
-export const sellLaptop = () => {
-    return{
-        type: SELL_LAPTOP
+export const sellLaptop = (number=1) => {
+    return {
+        type:SELL_LAPTOP,
+        payload:number,
     };
 };
-export const sellComputer = () => {
-    return{
-        type: SELL_COMP
-    };
-};
-export const sellPhone = () => {
-    return{
-        type: SELL_PHONE
-    };
-};
+
 export const sellWatch = () => {
-    return{
-        type: SELL_WATCH
+    return {
+        type:SELL_WATCH,
+    };
+};
+
+export const sellPhone = (number=1) => {
+    return {
+        type:SELL_PHONE,
+        payload:number,
+    };
+};
+
+export const sellComp = () => {
+    return {
+        type:SELL_COMP,
     };
 };

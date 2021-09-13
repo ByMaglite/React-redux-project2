@@ -1,16 +1,19 @@
-import { SELL_PHONE} from "../types/Types";
+import {SELL_PHONE} from "../types/type";
+
 const initialState = {
-    numberOfPhone : 300,
+    numberOfPhones: 300,
 }
-const phoneReducer = (state = initialState, action) => {
+
+const phoneReducer = (state=initialState, action) => {
     switch (action.type) {
         case SELL_PHONE:
-            return{
+            return {
                 ...state,
-                numberOfPhone: state.numberOfPhone - 1
+                numberOfPhones:state.numberOfPhones - action.payload,
             }
         default:
             return state;
     }
 }
+
 export default phoneReducer;

@@ -1,24 +1,19 @@
-import React from "react";
-import { connect } from "react-redux";
-import { sellLaptop } from "../redux/actions/actions";
-const LaptopComp = (props) => {
-  console.log(props);
-  return (
-    <div className="container">
-      <h2>Laptops -- Pure Redux -- </h2>
-      <h3>Number of Laptops : {props.numberOfLaptops} </h3>
-      <button onClick={props.sellLaptop}>Sell Laptop</button>
-    </div>
-  );
-};
-const mapStateToProps = (state) => {
-  return {
-    numberOfLaptops: state.laptop.numberOfLaptops,
-  };
-};
-const mapDispatchToProps = (dispatch) => {
-  return {
-    sellLaptop: () => dispatch(sellLaptop()),
-  };
-};
-export default connect(mapStateToProps, mapDispatchToProps)(LaptopComp);
+import React, {useState} from 'react';
+import {useSelector, useDispatch} from "react-redux";
+import {sellPhone} from "../redux/actions/actions";
+
+const PhoneComp = () => {
+    const [number, setNumber] = useState(1);
+    const numberOfPhones = useSelector(state => state.phone.numberOfPhones);
+    const dispatch = useDispatch();
+    return (
+        <div className="container"> 
+            <h2>Phones -- Hooks Example</h2>
+            <h3>Number of Phones : {numberOfPhones}</h3>
+            <input type="number" value={number} onChange={(e)=>setNumber(e.target.value)}/>
+            <button onClick={() => dispatch(sellPhone(number))}>Sell Phone</button>
+        </div>
+    )
+}
+
+export default PhoneComp;

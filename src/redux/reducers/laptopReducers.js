@@ -9,7 +9,7 @@ const laptopReducer = (state=initialState, action) => {
         case SELL_LAPTOP:
             return {
                 ...state,
-                numberOfLaptops:state.numberOfLaptops - 1,
+                numberOfLaptops:state.numberOfLaptops - action.payload,
             }
         default:
             return state;
