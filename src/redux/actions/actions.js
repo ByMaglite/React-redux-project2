@@ -25,3 +25,4 @@ export const sellComp = () => {
         type:SELL_COMP,
     };
 };
+

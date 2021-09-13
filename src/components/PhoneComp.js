@@ -10,7 +10,7 @@ const PhoneComp = () => {
         <div className="container"> 
             <h2>Phones -- Hooks Example</h2>
             <h3>Number of Phones : {numberOfPhones}</h3>
-            <input type="number" value={number} onChange={(e)=>setNumber(e.target.value)}/>
+            
             <button onClick={() => dispatch(sellPhone(number))}>Sell Phone</button>
         </div>
     )
